@@ -1,0 +1,49 @@
+/* Moon and Sun Toggle */
+.tdnn {
+    width: 50px;
+    height: 24px;
+    background: #e2e8f0;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dark .tdnn {
+    background: #4b5563;
+}
+
+.moon {
+    width: 20px;
+    height: 20px;
+    background: #f59e0b;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px #f59e0b;
+}
+
+.dark .moon {
+    left: calc(100% - 22px);
+    background: #e5e7eb;
+    box-shadow: 0 0 10px #e5e7eb;
+}
+
+.moon::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #e2e8f0;
+    border-radius: 50%;
+    top: -4px;
+    left: -4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dark .moon::before {
+    opacity: 0.2;
+}
