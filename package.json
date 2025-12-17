@@ -1,19 +1,29 @@
 {
-  "name": "cv-project",
+  "name": "online-cv",
   "version": "1.0.0",
-  "description": "",
+  "description": "Professional Online CV/Portfolio",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "start": "live-server --port=3000"
+    "dev": "concurrently \"npm run build:css -- --watch\" \"npm run start:dev\"",
+    "start:dev": "live-server --port=3000 --open=public",
+    "build:css": "tailwindcss -i ./src/styles/main.css -o ./public/css/styles.css",
+    "build": "npm run build:css",
+    "preview": "live-server --port=3000 --open=public --no-browser",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "cv",
+    "portfolio",
+    "resume",
+    "tailwind"
+  ],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
+    "@vercel/static-build": "^2.8.14",
     "autoprefixer": "^10.4.23",
+    "concurrently": "^8.2.2",
     "live-server": "^1.2.2",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.19"
