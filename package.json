@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npm run build:css -- --watch\" \"npm run start:dev\"",
-    "start:dev": "live-server --port=3000 --open=public",
+    "start:dev": "live-server public --port=3000",
     "build:css": "tailwindcss -i ./src/styles/main.css -o ./public/css/styles.css",
     "build": "npm run build:css",
-    "preview": "live-server --port=3000 --open=public --no-browser",
+    "preview": "live-server public --port=3000 --no-browser",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

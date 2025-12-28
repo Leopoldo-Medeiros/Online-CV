@@ -9,25 +9,6 @@
         @apply hover:bg-blue-200 dark:hover:bg-blue-800;
         @apply transform transition-transform duration-100 hover:scale-105;
     }
-
-    /* Simple and clean list styling */
-    ul.list-disc.list-inside {
-        @apply pl-5;
-    }
-    
-    ul.list-disc.list-inside li {
-        @apply text-left;
-        padding-left: 0.5rem;
-        text-indent: -1.5em;
-        margin-left: 1.5em;
-    }
-    
-    ul.list-disc.list-inside li:before {
-        content: "•";
-        display: inline-block;
-        width: 1.5em;
-        margin-left: -1.5em;
-    }
 }
 
 @layer utilities {
