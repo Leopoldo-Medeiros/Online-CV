@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leopoldo Medeiros CV</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="dist/output.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
     <script>
         // Simple dark mode toggle
         function toggleDarkMode() {
@@ -55,32 +55,6 @@
             }
         });
     </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .text-inherit {
-                color: inherit;
-            }
-        }
-        @layer components {
-            .skill-tag {
-                @apply px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm;
-            }
-        }
-    </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2563eb',
-                        secondary: '#1e40af',
-                        dark: '#1f2937',
-                        light: '#f9fafb',
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 <body class="min-h-full bg-gray-50 dark:bg-gray-900 font-sans text-gray-800 dark:text-gray-200 transition-colors duration-200">
 <div class="max-w-6xl mx-auto px-4 py-8 relative">
@@ -92,7 +66,7 @@
     <header class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 mb-8 transition-colors duration-200">
         <div class="flex flex-col md:flex-row items-center gap-6">
             <div class="w-32 h-32 rounded-full bg-blue-100 flex items-center justify-center overflow-hidden">
-                <img src="public/images/Me.png" alt="Leopoldo Medeiros" class="w-full h-full object-cover">
+                <img src="images/Me.png" alt="Leopoldo Medeiros" class="w-full h-full object-cover">
             </div>
             <div class="text-center md:text-left">
                 <h1 class="text-4xl font-bold text-gray-900 dark:text-white">Leopoldo Medeiros</h1>
