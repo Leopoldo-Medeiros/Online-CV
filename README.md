@@ -1,20 +1,20 @@
-# Professional Online CV
+# Leopoldo Medeiros - Professional CV
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yourusername/online-cv/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Leopoldo-Medeiros/Online-CV/blob/main/LICENSE)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/your-deploy-id/deploy-status)](https://your-netlify-site.netlify.app/)
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/online-cv?style=social)](https://github.com/yourusername/online-cv/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/Leopoldo-Medeiros/Online-CV?style=social)](https://github.com/Leopoldo-Medeiros/Online-CV/stargazers)
 
-A modern, responsive, and professional online CV/portfolio website built with HTML, CSS (Tailwind CSS), and JavaScript. This project showcases my skills, experience, and projects in a clean, accessible, and visually appealing way.
+A modern, responsive, and professional online CV website built with HTML, CSS (Tailwind CSS), and JavaScript. This project showcases my professional experience, skills, and projects in a clean, accessible, and visually appealing way with a dark/light mode toggle.
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://your-netlify-site.netlify.app/)
+[View Live Demo](https://your-netlify-site.netlify.app/) (Update with your deployment URL)
 
 ## ✨ Features
 
 - **Responsive Design**: Looks great on all devices
-- **Dark Mode**: Easy on the eyes with automatic system preference detection
-- **Print-Friendly**: Optimized for PDF export
+- **Dark/Light Mode**: Toggle between themes with system preference detection
+- **Modern UI**: Clean and professional design with Tailwind CSS
 - **Fast Loading**: Optimized assets and minimal dependencies
 - **SEO Optimized**: Proper meta tags and semantic HTML
 - **Accessibility**: Built with WCAG guidelines in mind
@@ -23,8 +23,8 @@ A modern, responsive, and professional online CV/portfolio website built with HT
 
 - **Frontend**:
   - HTML5
-  - CSS3 (with Tailwind CSS)
-  - JavaScript (Vanilla)
+  - CSS3 with Tailwind CSS
+  - Vanilla JavaScript
   - Font Awesome Icons
 
 - **Tools**:
@@ -39,12 +39,26 @@ A modern, responsive, and professional online CV/portfolio website built with HT
 - Node.js (v14 or higher)
 - npm (v6 or higher)
 
+### Project Structure
+
+```
+public/
+├── assets/
+│   └── images/      # All static images
+├── css/
+│   └── styles.css   # Compiled CSS
+├── js/
+│   └── theme.js     # Theme toggle functionality
+├── index.html       # Main HTML file
+└── favicon.svg      # Website favicon
+```
+
 ### Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/online-cv.git
-   cd online-cv
+   git clone https://github.com/Leopoldo-Medeiros/Online-CV.git
+   cd Online-CV
    ```
 
 2. Install dependencies:
