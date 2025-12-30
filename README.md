@@ -1,14 +1,13 @@
 # Leopoldo Medeiros - Professional CV
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Leopoldo-Medeiros/Online-CV/blob/main/LICENSE)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/your-deploy-id/deploy-status)](https://your-netlify-site.netlify.app/)
 [![GitHub stars](https://img.shields.io/github/stars/Leopoldo-Medeiros/Online-CV?style=social)](https://github.com/Leopoldo-Medeiros/Online-CV/stargazers)
 
 A modern, responsive, and professional online CV website built with HTML, CSS (Tailwind CSS), and JavaScript. This project showcases my professional experience, skills, and projects in a clean, accessible, and visually appealing way with a dark/light mode toggle.
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://your-netlify-site.netlify.app/) (Update with your deployment URL)
+[View Live Demo]([https://your-netlify-site.netlify.app/](https://www.leopoldo-medeiros.dev/)
 
 ## ✨ Features
 
@@ -90,18 +89,6 @@ public/
 - The project uses Tailwind CSS for styling
 - Custom styles can be added in `src/styles/main.css`
 - Color scheme can be modified in `tailwind.config.js`
-
-## 🌐 Deployment
-
-### Netlify (Recommended)
-
-1. Push your code to a GitHub repository
-2. Log in to [Netlify](https://www.netlify.com/)
-3. Click "New site from Git"
-4. Select your repository and configure the build settings:
-   - Build command: `npm run build`
-   - Publish directory: `public`
-5. Click "Deploy site"
 
 ### GitHub Pages
 
