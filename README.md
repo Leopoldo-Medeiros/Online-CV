@@ -1,114 +1,47 @@
-# Leopoldo Medeiros - Professional CV
+# Leopoldo Medeiros — Portfolio
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Leopoldo-Medeiros/Online-CV/blob/main/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/Leopoldo-Medeiros/Online-CV?style=social)](https://github.com/Leopoldo-Medeiros/Online-CV/stargazers)
 
-A modern, responsive, and professional online CV website built with HTML, CSS (Tailwind CSS), and JavaScript. This project showcases my professional experience, skills, and projects in a clean, accessible, and visually appealing way with a dark/light mode toggle.
+Personal portfolio for Leopoldo Medeiros — backend & observability engineer. A single-page, dark-themed, statically-generated site built with Astro, TypeScript and Tailwind CSS 4. No client-side framework, no CMS — content is a typed data file validated at build time.
 
-## 🚀 Live Demo
+## Stack
 
-[View Live Demo]([https://your-netlify-site.netlify.app/](https://www.leopoldo-medeiros.dev/)
+- [Astro 7](https://astro.build) (static output)
+- TypeScript
+- Tailwind CSS 4 (`@tailwindcss/vite`)
+- Zod (content schema validation)
+- Self-hosted variable fonts (Bricolage Grotesque, Hanken Grotesk, JetBrains Mono)
 
-## ✨ Features
+See [`docs/architecture.md`](docs/architecture.md) for the full breakdown, [`docs/design_system.md`](docs/design_system.md) for the visual language, and [`docs/coding_standards.md`](docs/coding_standards.md) before making changes.
 
-- **Responsive Design**: Looks great on all devices
-- **Dark/Light Mode**: Toggle between themes with system preference detection
-- **Modern UI**: Clean and professional design with Tailwind CSS
-- **Fast Loading**: Optimized assets and minimal dependencies
-- **SEO Optimized**: Proper meta tags and semantic HTML
-- **Accessibility**: Built with WCAG guidelines in mind
+## Getting started
 
-## 🛠️ Technologies Used
-
-- **Frontend**:
-  - HTML5
-  - CSS3 with Tailwind CSS
-  - Vanilla JavaScript
-  - Font Awesome Icons
-
-- **Tools**:
-  - Tailwind CSS for utility-first styling
-  - PostCSS for CSS processing
-  - npm for package management
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm (v6 or higher)
-
-### Project Structure
-
-```
-public/
-├── assets/
-│   └── images/      # All static images
-├── css/
-│   └── styles.css   # Compiled CSS
-├── js/
-│   └── theme.js     # Theme toggle functionality
-├── index.html       # Main HTML file
-└── favicon.svg      # Website favicon
+```bash
+npm install
+npm run dev      # http://localhost:4321
 ```
 
-### Installation
+Other scripts:
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Leopoldo-Medeiros/Online-CV.git
-   cd Online-CV
-   ```
+```bash
+npm run build     # validates content, then builds to dist/
+npm run preview   # serves the production build locally
+npm run check     # astro check (type-checking)
+npm run lint       # eslint .
+```
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+## Updating content
 
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-   This will start a local development server at `http://localhost:3000`
+All CV content — name, summary, experience, tech stack, case studies — lives in `src/content/profile.ts` and `src/content/case-studies.ts`, typed against `src/content/schema.ts`. Edit those files, not the components; `npm run build` fails loudly if the shape breaks.
 
-## 🎨 Customization
+## Deployment
 
-### Update Your Information
+Deployed on Vercel as a static site (see `vercel.json`), on a custom domain configured via `CNAME`.
 
-1. Open `public/index.html` in your favorite code editor
-2. Update the following sections with your information:
-   - Personal details (name, title, contact info)
-   - Professional summary
-   - Work experience
-   - Education
-   - Skills
-   - Projects
+## License
 
-### Styling
-
-- The project uses Tailwind CSS for styling
-- Custom styles can be added in `src/styles/main.css`
-- Color scheme can be modified in `tailwind.config.js`
-
-### GitHub Pages
-
-1. Update the `baseUrl` in `tailwind.config.js` to your repository name
-2. Run the build command:
-   ```bash
-   npm run build
-   ```
-3. Push the `public` directory to the `gh-pages` branch
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Font Awesome](https://fontawesome.com/)
-- [Google Fonts](https://fonts.google.com/)
+MIT — see [LICENSE](LICENSE).
 
 ---
 
-👨‍💻 **Leopoldo Medeiros** - [GitHub](https://github.com/yourusername) | [LinkedIn](https://linkedin.com/in/yourusername) | [Email](mailto:your.email@example.com)
+**Leopoldo Medeiros** — [LinkedIn](https://www.linkedin.com/in/leopoldomedeiros/) · [GitHub](https://github.com/Leopoldo-Medeiros) · [Email](mailto:leopoldof.medeiros@gmail.com)

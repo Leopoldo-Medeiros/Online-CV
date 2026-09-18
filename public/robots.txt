@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://leopoldomedeiros.com/sitemap-index.xml

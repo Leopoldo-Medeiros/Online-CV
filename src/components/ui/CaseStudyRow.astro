@@ -1,0 +1,42 @@
+---
+import type { CaseStudy } from "@/content/schema";
+import TechPill from "./TechPill.astro";
+
+interface Props {
+  caseStudy: CaseStudy;
+}
+
+const { caseStudy } = Astro.props;
+---
+
+<article
+  class="grid gap-6 border-t border-border py-10 first:border-t-0 first:pt-0 md:grid-cols-[auto_1fr] md:gap-10"
+>
+  <div class="flex items-baseline gap-4 md:flex-col md:items-start md:gap-2">
+    <span class="font-mono text-sm text-ember">{caseStudy.index}</span>
+    <span class="font-mono text-xs uppercase tracking-wide text-muted">{caseStudy.period}</span>
+  </div>
+  <div>
+    <h3 class="font-display text-xl font-semibold text-ink md:text-2xl">{caseStudy.title}</h3>
+    <p class="mb-4 mt-1 font-mono text-xs uppercase tracking-widest text-muted">{caseStudy.company}</p>
+
+    <dl class="grid gap-5 md:grid-cols-3">
+      <div>
+        <dt class="mb-1 font-mono text-[11px] uppercase tracking-widest text-ember">Problem</dt>
+        <dd class="text-sm leading-relaxed text-muted">{caseStudy.problem}</dd>
+      </div>
+      <div>
+        <dt class="mb-1 font-mono text-[11px] uppercase tracking-widest text-ember">Approach</dt>
+        <dd class="text-sm leading-relaxed text-muted">{caseStudy.approach}</dd>
+      </div>
+      <div>
+        <dt class="mb-1 font-mono text-[11px] uppercase tracking-widest text-ember">Impact</dt>
+        <dd class="text-sm leading-relaxed text-muted">{caseStudy.impact}</dd>
+      </div>
+    </dl>
+
+    <div class="mt-5 flex flex-wrap gap-2">
+      {caseStudy.tags.map((tag) => <TechPill label={tag} />)}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,13 @@
+---
+import { profile } from "@/content/profile";
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-border py-8">
+  <div
+    class="mx-auto flex max-w-6xl flex-col gap-2 px-6 font-mono text-xs uppercase tracking-widest text-muted sm:flex-row sm:items-center sm:justify-between"
+  >
+    <p>© {year} {profile.name}</p>
+    <p>Based in {profile.location}. Engineered for reliability.</p>
+  </div>
+</footer>

@@ -1,0 +1,14 @@
+---
+import { caseStudies } from "@/content/case-studies";
+import SectionHeading from "@/components/ui/SectionHeading.astro";
+import CaseStudyRow from "@/components/ui/CaseStudyRow.astro";
+---
+
+<section id="work" class="border-b border-border py-20 md:py-28">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionHeading index="03" eyebrow="Selected work" heading="Systems, not slides." />
+    <div>
+      {caseStudies.map((caseStudy) => <CaseStudyRow caseStudy={caseStudy} />)}
+    </div>
+  </div>
+</section>

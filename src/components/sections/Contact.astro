@@ -1,0 +1,42 @@
+---
+import { profile } from "@/content/profile";
+import SectionHeading from "@/components/ui/SectionHeading.astro";
+import Button from "@/components/ui/Button.astro";
+---
+
+<section id="contact" class="py-20 md:py-28">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionHeading index="05" eyebrow="Contact" heading="Let's talk about a system worth building." />
+    <div class="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-start">
+      <div>
+        <p class="max-w-lg text-base leading-relaxed text-muted md:text-lg">
+          Based in {profile.location}. Open to backend and observability engineering roles, and the occasional
+          gnarly performance problem.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <Button href={`mailto:${profile.contact.email}`} variant="primary">Email me</Button>
+          <Button href={profile.contact.linkedin} variant="secondary" external>LinkedIn</Button>
+          <Button href={profile.contact.github} variant="secondary" external>GitHub</Button>
+        </div>
+      </div>
+      <dl class="grid gap-6 border-t border-border pt-8 md:border-l md:border-t-0 md:pl-10 md:pt-0">
+        <div>
+          <dt class="font-mono text-xs uppercase tracking-widest text-muted">Email</dt>
+          <dd class="mt-1 text-ink">
+            <a href={`mailto:${profile.contact.email}`} class="hover:text-ember">{profile.contact.email}</a>
+          </dd>
+        </div>
+        <div>
+          <dt class="font-mono text-xs uppercase tracking-widest text-muted">Phone</dt>
+          <dd class="mt-1 text-ink">
+            <a href={`tel:${profile.contact.phoneHref}`} class="hover:text-ember">{profile.contact.phone}</a>
+          </dd>
+        </div>
+        <div>
+          <dt class="font-mono text-xs uppercase tracking-widest text-muted">Location</dt>
+          <dd class="mt-1 text-ink">{profile.location}</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>

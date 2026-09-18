@@ -1,0 +1,54 @@
+---
+import { profile } from "@/content/profile";
+import SectionHeading from "@/components/ui/SectionHeading.astro";
+import TechPill from "@/components/ui/TechPill.astro";
+---
+
+<section id="experience" class="border-b border-border py-20 md:py-28">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionHeading index="04" eyebrow="Experience" heading="Where the systems above were built." />
+
+    <div class="flex flex-col divide-y divide-border">
+      {
+        profile.experience.map((role) => (
+          <div class="grid gap-4 py-8 first:pt-0 last:pb-0 md:grid-cols-[1fr_2.4fr] md:gap-10">
+            <div>
+              <p class="font-mono text-xs uppercase tracking-widest text-muted">{role.period}</p>
+              <h3 class="mt-1 font-display text-lg font-semibold text-ink">{role.position}</h3>
+              <p class="text-sm text-muted">
+                {role.company} — {role.location}
+              </p>
+            </div>
+            <div>
+              <ul class="space-y-2 text-sm leading-relaxed text-muted">
+                {role.highlights.map((highlight) => (
+                  <li class="flex gap-3">
+                    <span class="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-ember"></span>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+              <div class="mt-4 flex flex-wrap gap-2">
+                {role.skills.map((skill) => <TechPill label={skill} />)}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 border-t border-border pt-8">
+      <p class="mb-4 font-mono text-xs uppercase tracking-widest text-muted">Education</p>
+      {
+        profile.education.map((edu) => (
+          <div>
+            <h3 class="font-display text-lg font-semibold text-ink">{edu.degree}</h3>
+            <p class="text-sm text-muted">
+              {edu.institution} — {edu.location} · {edu.period}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
