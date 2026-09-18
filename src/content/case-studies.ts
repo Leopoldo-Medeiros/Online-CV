@@ -11,9 +11,9 @@ export const caseStudies: CaseStudy[] = [
     company: "New Relic",
     period: "2023 — Present",
     problem:
-      "Enterprise Java, Python and Node.js production stacks needed rapid, accurate root-cause analysis to keep mission-critical APIs reliable — without a dedicated observability engineer, incidents were diagnosed by guesswork.",
+      "Enterprise Java, Python and Node.js production stacks needed rapid, accurate root-cause analysis to keep mission-critical APIs reliable, but without a dedicated observability engineer, incidents were diagnosed by guesswork.",
     approach:
-      "Ran deep-dive JVM internals analysis — heap dumps, GC tuning, thread profiling — alongside distributed-systems RCA. Instrumented services with OpenTelemetry for tracing, metrics and custom alerting, and authored RFCs to make the tracing architecture reusable across teams.",
+      "Ran deep-dive JVM internals analysis (heap dumps, GC tuning, thread profiling) alongside distributed-systems RCA. Instrumented services with OpenTelemetry for tracing, metrics and custom alerting, and authored RFCs to make the tracing architecture reusable across teams.",
     impact:
       "Mission-critical APIs held above a 95%+ SLA compliance target, with internal Python tooling automating repeat diagnostic work and cutting MTTR.",
     tags: ["Java", "OpenTelemetry", "Distributed Tracing", "JVM Internals", "Python"],
@@ -37,7 +37,7 @@ export const caseStudies: CaseStudy[] = [
     company: "Hibernian Healthcare",
     period: "2019 — 2022",
     problem:
-      "Healthcare appointment and delivery logistics depended on secure, high-availability integrations with third-party systems (including Bluejeans) — any instability directly affected patient-facing operations.",
+      "Healthcare appointment and delivery logistics depended on secure, high-availability integrations with third-party systems (including Bluejeans), and any instability directly affected patient-facing operations.",
     approach:
       "Designed and automated the backend logistics architecture, integrated RESTful APIs with third-party systems, and covered the contract with unit and integration test suites (JUnit, PHPUnit, Postman). Managed Docker-containerised production environments on cloud instances.",
     impact:

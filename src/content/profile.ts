@@ -7,7 +7,7 @@ import type { Profile } from "./schema";
 export const profile: Profile = {
   name: "Leopoldo Medeiros",
   title: "Backend Engineer",
-  location: "Dublin, Ireland",
+  location: "Wicklow, Ireland",
   summary:
     "Backend developer with 5+ years of software engineering experience designing, building, and optimising high-availability production systems across fintech, healthcare, and SaaS environments. Proven expertise in microservices architecture, API design, and deep-dive performance analysis of distributed systems. Passionate about constructing consistent, low-latency API contracts and robust backend flows that support modern distributed architectures.",
   contact: {
@@ -17,17 +17,13 @@ export const profile: Profile = {
     linkedin: "https://www.linkedin.com/in/leopoldomedeiros/",
     github: "https://github.com/Leopoldo-Medeiros",
   },
-  metrics: [
-    { value: "5+", label: "Years in production engineering" },
-    { value: "95%+", label: "SLA compliance maintained" },
-    { value: "3", label: "Industries — fintech, healthcare, SaaS" },
-  ],
   capabilities: [
     {
       index: "01",
       title: "Observability & performance",
       description:
-        "JVM internals analysis — heap dumps, GC tuning, thread profiling — and distributed-systems RCA across Java, Python and Node.js production stacks. Instrumented with OpenTelemetry for tracing, metrics and alerting.",
+        "Distributed-systems RCA and JVM internals analysis across Java, Python and Node.js production stacks, instrumented with OpenTelemetry for tracing, metrics and alerting.",
+      details: ["Heap dumps", "GC tuning", "Thread profiling"],
     },
     {
       index: "02",
@@ -39,7 +35,7 @@ export const profile: Profile = {
       index: "03",
       title: "DevOps & delivery",
       description:
-        "Containerised environments, CI/CD pipelines and internal tooling that shorten the loop between a regression and a fix — automating the parts of the job that don't need a human.",
+        "Containerised environments, CI/CD pipelines and internal tooling that shorten the loop between a regression and a fix, automating the parts of the job that don't need a human.",
     },
   ],
   techStack: [

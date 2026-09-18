@@ -14,7 +14,7 @@ Every page (currently just `/`) must set, via `BaseLayout`'s props:
 
 ## Structured data
 
-`BaseLayout.astro` embeds a `schema.org/Person` JSON-LD block built from `profile.ts` (name, job title, email, `sameAs` for LinkedIn/GitHub, Dublin address). Keep it in sync with the visible contact section — don't let structured data claim something the page doesn't say.
+`BaseLayout.astro` embeds a `schema.org/Person` JSON-LD block built from `profile.ts` (name, job title, email, `sameAs` for LinkedIn/GitHub, home address). Keep it in sync with the visible contact section — don't let structured data claim something the page doesn't say.
 
 ## Sitemap & robots
 

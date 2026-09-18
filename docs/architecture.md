@@ -24,7 +24,7 @@ scripts/
 src/
   content/               typed CV data + zod schemas (see above)
   components/
-    ui/                  small reusable primitives (Button, TechPill, Metric, ...)
+    ui/                  small reusable primitives (Button, TechPill, SectionHeading, ...)
     sections/            one component per homepage section (Hero, About, Work, ...)
   layouts/BaseLayout.astro  <head>, meta tags, JSON-LD, font preloads
   pages/index.astro        assembles the sections — the only route

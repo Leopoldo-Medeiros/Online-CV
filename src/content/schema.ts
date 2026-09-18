@@ -24,11 +24,6 @@ export const educationSchema = z.object({
   period: z.string(),
 });
 
-export const metricSchema = z.object({
-  value: z.string(),
-  label: z.string(),
-});
-
 export const techGroupSchema = z.object({
   label: z.string(),
   items: z.array(z.string()).min(1),
@@ -38,6 +33,7 @@ export const capabilitySchema = z.object({
   index: z.string(),
   title: z.string(),
   description: z.string(),
+  details: z.array(z.string()).min(1).optional(),
 });
 
 export const profileSchema = z.object({
@@ -46,7 +42,6 @@ export const profileSchema = z.object({
   location: z.string(),
   summary: z.string(),
   contact: contactSchema,
-  metrics: z.array(metricSchema).length(3),
   capabilities: z.array(capabilitySchema).min(1),
   techStack: z.array(techGroupSchema).min(1),
   experience: z.array(experienceSchema).min(1),

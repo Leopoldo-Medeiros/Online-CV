@@ -21,30 +21,39 @@ Direction explored and chosen via Stitch (two options generated: "Ember" — war
 
 **Forbidden:**
 - Emoji anywhere in copy or UI.
-- Gradient text, gradient backgrounds, glassmorphism, purple→pink gradients.
+- Gradient text, glassmorphism, purple→pink or multi-hue gradients. Gradient *backgrounds* have exactly one blessed exception — see "The hero portrait" below; don't add a second one elsewhere without checking first.
 - More than one accent color at a time.
 - Soft drop shadows — use `border-border` hairlines instead.
-- Fully rounded ("pill") buttons or fully rounded cards (the circular hero portrait/orbit ring is the one deliberate exception — a focal element, not a button or card).
+- Fully rounded ("pill") buttons or fully rounded cards (the hero's glow orb is the deliberate exception — a focal element around the portrait, not a button or card).
 - Three identical cards in a row — vary column widths, break the grid.
 - Fake testimonials, fake client logos, fake stats.
 - A contact form that doesn't actually send anywhere — use real `mailto:`/`tel:` links.
-- Rigid straight-line "network diagram" backgrounds (dots joined into hard triangular meshes). Tried and rejected during design review — reads as busy and mechanical rather than calm. See "Background texture" below for what to use instead.
+- Decorative "connected systems" line/dot motifs (network diagrams, curved signal-sweep connectors between sections). Tried a few variations during design review and all were rejected — see "Background texture" below. The page background is just flat `--color-bg` + grain; keep it that way.
 
 **Required:**
 - Left-aligned, asymmetric layout — resist centering everything.
 - Every metric shown must be real and traceable to `src/content/profile.ts` — no invented numbers.
 - Section numbering (`01 —`, `02 —`, ...) via `SectionHeading`, consistently.
 - Copy in first person, specific and technical — never "passionate about crafting beautiful experiences."
+- Body paragraphs (summary, case-study narrative, experience highlights, contact intro) are `text-justify` — a deliberate typographic choice, not a default. Keep it on multi-line prose; don't apply it to short labels, tags, or single-line text.
 - Subtle grain texture on `body` (already in `global.css`) — a deliberate, very low-opacity detail, not decoration.
+
+## The hero portrait
+
+`Hero.astro` uses a background-removed cutout (`public/images/leopoldo-cutout.webp`, RGBA/WebP, alpha matting done locally with `rembg`) rather than a framed photo — it floats directly on the page background, edge-masked to a soft fade at the bottom (`.hero-cutout`'s `mask-image` in the component) instead of a hard crop line. Behind it sits a blurred radial-gradient "glow orb" (`.glow-orb`, single ember hue, `blur-2xl`) — **this is the one deliberate exception to the no-gradient rule**, chosen after explicitly weighing it against a flat solid-circle alternative during design review. Keep it single-hue (ember only, no second color, no rainbow) and keep the blur soft enough that it reads as ambient light, not a shape with a visible edge.
+
+If you replace the source photo, redo the cutout the same way (`rembg` locally, not a new manual crop) and re-check the mask fade and glow sizing against the new image's proportions.
 
 ## Background texture
 
-Two layers, both intentionally quiet:
-1. **Grain** (`body::before` in `global.css`) — a fractal-noise overlay, `opacity: 0.035`, `mix-blend-mode: overlay`. Breaks up flat color; never touch its opacity without checking it's still barely-there.
-2. **Particle field** (`body`'s own `background-image` in `global.css`) — a repeating SVG tile of sparse, irregularly-placed soft dots (varied size/opacity, a couple with a gentle blur for depth). This is the *only* ambient background pattern — it reads as quiet atmosphere, not a diagram. If a section needs to gesture at "connected systems," use a single soft, gently-curved line (see `SectionConnector.astro` for the pattern: one low-opacity curve, one short ember-highlighted segment near its end, one dot) — never multiple straight segments meeting at hard angles.
+The page background is flat `--color-bg` plus a fractal-noise grain overlay (`body::before` in `global.css`, `opacity: 0.035`, `mix-blend-mode: overlay`) — nothing else. Several ambient background treatments were tried and rejected during design review; don't reintroduce any of them without checking first:
+
+- A full-page dot/particle field — read as noise, not atmosphere, even sparse and low-opacity.
+- Straight-line "network diagram" backgrounds (dots joined into hard triangular meshes) — busy and mechanical.
+- A soft curved "signal sweep" connector line between sections — decided the page reads cleaner with no connective line motif at all once the rest of the content carries the "systems" theme (case studies, tech stack, metrics).
 
 ## When adding a new section
 
-1. Does it need a new accent color or gradient to look "finished"? If yes, the layout is the problem — fix spacing/hierarchy instead.
+1. Does it need a new accent color, gradient, or background pattern to look "finished"? If yes, the layout is the problem — fix spacing/hierarchy instead.
 2. Would it read the same with the name swapped to a template placeholder? If yes, make the copy more specific.
-3. Check it against the four Dribbble references this design was benchmarked against (kept in `docs/references/` if added) — it should feel like it belongs, without copying any one of them directly.
+3. Check it against the Dribbble references this design was benchmarked against — it should feel like it belongs, without copying any one of them directly.
