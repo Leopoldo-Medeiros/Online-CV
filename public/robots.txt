@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://leopoldomedeiros.com/sitemap-index.xml
+Sitemap: https://leopoldo-medeiros.dev/sitemap-index.xml
