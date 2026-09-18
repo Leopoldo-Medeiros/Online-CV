@@ -15,6 +15,7 @@ export const projectPreviewSchema = z.object({
   src: z.string().optional(),
   alt: z.string().optional(),
   url: z.url().optional(),
+  video: z.string().optional(),
 });
 
 export const experienceSchema = z.object({

@@ -55,14 +55,27 @@ import TechPill from "@/components/ui/TechPill.astro";
                       </a>
                     ) : (
                       <div class="w-full max-w-xs overflow-hidden border border-border">
-                        {proj.src && (
-                          <img
-                            src={proj.src}
-                            alt={proj.alt}
-                            width="960"
-                            height="460"
-                            class="h-auto w-full object-cover opacity-80"
+                        {proj.video ? (
+                          <video
+                            src={proj.video}
+                            poster={proj.src}
+                            aria-label={proj.alt}
+                            autoplay
+                            loop
+                            muted
+                            playsinline
+                            class="h-auto w-full object-cover opacity-90"
                           />
+                        ) : (
+                          proj.src && (
+                            <img
+                              src={proj.src}
+                              alt={proj.alt}
+                              width="960"
+                              height="460"
+                              class="h-auto w-full object-cover opacity-80"
+                            />
+                          )
                         )}
                         <div class="p-3">
                           <div class="flex items-center justify-between gap-2">
