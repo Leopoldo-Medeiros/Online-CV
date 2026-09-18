@@ -96,6 +96,8 @@ export const profile: Profile = {
           description:
             "A B2B ordering platform for a coffee roaster, serving cafés, restaurants, resellers and offices with weekly fresh roasts.",
           status: "in-progress",
+          src: "/images/armazem357-thumb.webp",
+          alt: "Armazém 357 design preview — B2B ordering platform for a coffee roaster",
         },
       ],
     },
