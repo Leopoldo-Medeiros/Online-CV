@@ -8,6 +8,15 @@ export const contactSchema = z.object({
   github: z.url(),
 });
 
+export const projectPreviewSchema = z.object({
+  name: z.string(),
+  description: z.string(),
+  status: z.enum(["live", "in-progress"]),
+  src: z.string().optional(),
+  alt: z.string().optional(),
+  url: z.url().optional(),
+});
+
 export const experienceSchema = z.object({
   company: z.string(),
   location: z.string(),
@@ -15,6 +24,7 @@ export const experienceSchema = z.object({
   period: z.string(),
   highlights: z.array(z.string()).min(1),
   skills: z.array(z.string()).min(1),
+  projects: z.array(projectPreviewSchema).min(1).optional(),
 });
 
 export const educationSchema = z.object({

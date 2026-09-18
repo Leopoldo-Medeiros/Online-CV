@@ -71,6 +71,35 @@ export const profile: Profile = {
       skills: ["Java", "Python", "JVM Internals", "Open Telemetry", "Distributed Tracing", "API Optimization", "CI/CD", "Docker"],
     },
     {
+      company: "Syncro Web",
+      location: "Wicklow, Ireland",
+      position: "Founder & Developer",
+      period: "Sep 2025 — Present",
+      highlights: [
+        "Design, build and host websites for local businesses, handling the full technical stack personally (architecture, hosting, email/SSL, ongoing monitoring) instead of clients juggling multiple vendors.",
+        "Shipped CodeCV, a live coaching and job-placement platform for IT professionals, alongside client sites including a multilingual appointment-focused clinic site.",
+        "Build automations and integrations that connect clients' existing business tools to remove manual data entry.",
+        "Operated as an independent practice for about a year before formally incorporating the company in mid-2026.",
+      ],
+      skills: ["Web Development", "Hosting & DevOps", "Automation", "Client Delivery"],
+      projects: [
+        {
+          name: "CodeCV",
+          description: "Coaching and job-placement platform for IT professionals.",
+          status: "live",
+          src: "/images/codecv-thumb.webp",
+          alt: "CodeCV homepage — coaching and job-placement platform for IT professionals",
+          url: "https://codecv.ie/",
+        },
+        {
+          name: "Armazém 357",
+          description:
+            "A B2B ordering platform for a coffee roaster, serving cafés, restaurants, resellers and offices with weekly fresh roasts.",
+          status: "in-progress",
+        },
+      ],
+    },
+    {
       company: "Online Application",
       location: "Dublin, Ireland",
       position: "FullStack Developer",

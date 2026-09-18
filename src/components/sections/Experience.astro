@@ -31,6 +31,43 @@ import TechPill from "@/components/ui/TechPill.astro";
               <div class="mt-4 flex flex-wrap gap-2">
                 {role.skills.map((skill) => <TechPill label={skill} />)}
               </div>
+              {role.projects && (
+                <div class="mt-4 flex flex-wrap gap-3">
+                  {role.projects.map((proj) =>
+                    proj.status === "live" ? (
+                      <a
+                        href={proj.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="block w-full max-w-xs overflow-hidden border border-border transition-colors hover:border-ember/50"
+                      >
+                        <img
+                          src={proj.src}
+                          alt={proj.alt}
+                          width="960"
+                          height="600"
+                          class="h-auto w-full object-cover"
+                        />
+                        <span class="flex items-center justify-between border-t border-border px-3 py-2 font-mono text-[11px] uppercase tracking-widest text-muted">
+                          {proj.name}
+                          <span aria-hidden="true">→</span>
+                        </span>
+                      </a>
+                    ) : (
+                      <div class="w-full max-w-xs border border-border p-3">
+                        <div class="flex items-center justify-between gap-2">
+                          <span class="font-mono text-[11px] uppercase tracking-widest text-muted">{proj.name}</span>
+                          <span class="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-ember">
+                            <span class="h-1 w-1 rounded-full bg-ember" />
+                            In progress
+                          </span>
+                        </div>
+                        <p class="mt-2 text-xs leading-relaxed text-muted">{proj.description}</p>
+                      </div>
+                    ),
+                  )}
+                </div>
+              )}
             </div>
           </div>
         ))
