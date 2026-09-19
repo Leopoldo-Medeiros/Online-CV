@@ -22,7 +22,7 @@ Direction explored and chosen via Stitch (two options generated: "Ember" — war
 **Forbidden:**
 - Emoji anywhere in copy or UI.
 - Gradient text, glassmorphism, purple→pink or multi-hue gradients. Gradient *backgrounds* have exactly one blessed exception — see "The hero portrait" below; don't add a second one elsewhere without checking first.
-- More than one accent color at a time.
+- More than one accent color at a time in *our own* UI (buttons, links, active states, headings). Third-party company logos in the "worked with" strip keep their real brand colors — see below — that's attribution, not a design choice, and doesn't count against this rule.
 - Soft drop shadows — use `border-border` hairlines instead.
 - Fully rounded ("pill") buttons or fully rounded cards (the hero's glow orb is the deliberate exception — a focal element around the portrait, not a button or card).
 - Three identical cards in a row — vary column widths, break the grid.
@@ -43,6 +43,15 @@ Direction explored and chosen via Stitch (two options generated: "Ember" — war
 `Hero.astro` uses a background-removed cutout (`public/images/leopoldo-cutout.webp`, RGBA/WebP, alpha matting done locally with `rembg`) rather than a framed photo — it floats directly on the page background, edge-masked to a soft fade at the bottom (`.hero-cutout`'s `mask-image` in the component) instead of a hard crop line. Behind it sits a blurred radial-gradient "glow orb" (`.glow-orb`, single ember hue, `blur-2xl`) — **this is the one deliberate exception to the no-gradient rule**, chosen after explicitly weighing it against a flat solid-circle alternative during design review. Keep it single-hue (ember only, no second color, no rainbow) and keep the blur soft enough that it reads as ambient light, not a shape with a visible edge.
 
 If you replace the source photo, redo the cutout the same way (`rembg` locally, not a new manual crop) and re-check the mask fade and glow sizing against the new image's proportions.
+
+## The "worked with" logo strip
+
+`Hero.astro` closes with a row of real employer/institution logos (`public/images/logos/`), each in its own hairline-bordered card — a dark card (`bg-surface`) for logos designed for dark backgrounds, a white card (`bg-white`) for logos that only exist on light backgrounds. This is the one place logos keep their actual brand colors instead of our single-accent palette (see the Forbidden list above) — it's factual attribution ("I worked here"), not a design flourish, so don't recolor or monochrome them.
+
+Rules for this strip specifically:
+- **Only real, sourced logos** — pulled from each company's own site or official media kit (New Relic's came from their public media-assets page), never fabricated or reconstructed from memory. If a company has no usable isolated logo asset (e.g. Syncro Web's mark only exists overlaid on a busy photo), render its name as plain styled text instead of faking a logo image — don't invent a wordmark.
+- Prefer each brand's dark-mode/reversed logo variant when one exists (most companies publish one) so it sits on our `bg-surface` card without needing a white background at all.
+- Every entry must correspond to a real line in `src/content/profile.ts`'s `experience` — don't add a logo for a company that isn't listed there.
 
 ## Background texture
 

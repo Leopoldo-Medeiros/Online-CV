@@ -5,6 +5,13 @@ import TechPill from "@/components/ui/TechPill.astro";
 
 const heroTags = ["Java", "PHP", "OpenTelemetry", "Distributed Tracing"];
 const firstName = profile.name.split(" ")[0];
+
+const companies = [
+  { name: "New Relic", src: "/images/logos/newrelic.png", card: "dark", imgClass: "max-h-5", w: 400, h: 78 },
+  { name: "Hibernian Healthcare", src: "/images/logos/hibernian.png", card: "light", imgClass: "max-h-9", w: 1000, h: 362 },
+  { name: "Online Application", src: "/images/logos/onlineapplication.png", card: "light", imgClass: "max-h-7", w: 138, h: 49 },
+  { name: "CCT College Dublin", src: "/images/logos/cct.png", card: "light", imgClass: "max-h-6", w: 225, h: 42 },
+] as const;
 ---
 
 <section id="top" class="relative overflow-hidden border-b border-border">
@@ -62,6 +69,34 @@ const firstName = profile.name.split(" ")[0];
         <p class="mt-4 text-center font-mono text-[11px] uppercase tracking-widest text-muted md:text-right">
           SYS_ID: LM-WIC-01 · 52.9808°N 6.0446°W
         </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative mx-auto max-w-6xl border-t border-border px-6 py-10">
+    <p class="mb-5 font-mono text-xs uppercase tracking-widest text-muted">Companies I've worked with</p>
+    <div class="flex flex-wrap gap-3">
+      {
+        companies.map((company) => (
+          <div
+            class={`flex h-16 items-center justify-center rounded-sm border border-border px-6 ${
+              company.card === "light" ? "bg-white" : "bg-surface"
+            }`}
+          >
+            <img
+              src={company.src}
+              alt={company.name}
+              width={company.w}
+              height={company.h}
+              class={`w-auto object-contain ${company.imgClass}`}
+            />
+          </div>
+        ))
+      }
+      <div class="flex h-16 items-center justify-center rounded-sm border border-border bg-surface px-6">
+        <span class="font-sans text-sm tracking-wide text-ink">
+          <span class="font-bold">SYNCRO</span> WEB
+        </span>
       </div>
     </div>
   </div>
